@@ -1,9 +1,10 @@
-#!/usr/bin/python3
+#!/usr/bin/pyhon3
 """
-Parent class that sub classes will inherit from
+Parent class that will inherit
 """
 import uuid
 from datetime import datetime
+from models import storage
 
 
 class BaseModel:
@@ -16,6 +17,7 @@ class BaseModel:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             self.updated_at = self.created_at
+            storage.new(self)
         else:
             f = "%Y-%m-%dT%H:%M:%S.%f"
             for key, value in kwargs.items():
@@ -35,10 +37,11 @@ class BaseModel:
         """updates last update time
         """
         self.updated_at = datetime.now()
+        storage.save()
 
     def to_dict(self):
         """creates a new dictionary, adding a key and returning
-        date times converted to strings
+        datemtimes converted to strings
         """
         new_dict = {}
 

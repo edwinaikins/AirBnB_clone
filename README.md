@@ -122,4 +122,4 @@ To all the peers that contribuited with their knowledge
 
 ### Authors :fountain_pen:
 * Edwin Pokoo-Aikins - @edwinaikins
-* Andrew Akligo - @
+* Andrew Akligo - @andrewakligo

@@ -3,6 +3,8 @@
 import unittest
 from models.base_model import BaseModel
 import os
+from models import storage
+from models.engine.file_storage import FileStorage
 import datetime
 
 
@@ -14,7 +16,7 @@ class BaseModelTests(unittest.TestCase):
     def testBaseModel1(self):
         """ Test attributes value of a BaseModel instance """
 
-        self.my_model.name = "Edwin"
+        self.my_model.name = "Holberton"
         self.my_model.my_number = 89
         self.my_model.save()
         my_model_json = self.my_model.to_dict()
